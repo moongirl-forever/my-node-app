@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Key Club Calendar</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background-color: #e9f5ec;
+      font-family: 'Segoe UI', sans-serif;
+      color: #2c3e50;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #388e3c;
+    }
+
+    .calendar-container {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      margin: 2rem 0;
+    }
+
+    .day {
+      background-color: #a5d6a7;
+      padding: 10px;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .event-form {
+      background-color: #dcedc1;
+      padding: 1rem;
+      border-radius: 8px;
+      max-width: 300px;
+      margin: 0 auto 2rem;
+    }
+
+    .event-form input,
+    .event-form button {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      width: 100%;
+      border-radius: 4px;
+      border: none;
+    }
+
+    .event-list {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .event-list li {
+      background: #c8e6c9;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      border-left: 5px solid #66bb6a;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+    
+  <h1>🌿 Key Club Events Calendar</h1>
+  <div class="window-frame">
+  <div class="title-bar">
+    <span class="title">Key in Important Dates!</span>
+    <div class="buttons">
+      <span class="btn close"></span>
+      <span class="btn minimize"></span>
+      <span class="btn maximize"></span>
+    </div>
+  </div>
+
+  <!-- Everything else goes inside this frame -->
+  <!-- Your event form, calendar, and event list go here -->
+</div>
+
+  <div class="button-container">
+  <a href="index.html" class="back-button">← Back to Home</a>
+</div>
+  <form class="event-form" id="event-form">
+    <input type="date" id="event-date" required />
+    <input type="text" id="event-title" placeholder="Event title" required />
+    <button type="submit">Add Event</button>
+  </form>
+
+  <div class="calendar-container" id="calendar-days"></div>
+
+  <ul class="event-list" id="event-list"></ul>
+
+  <script src="calendar.js"></script>
+</body>
+</html>

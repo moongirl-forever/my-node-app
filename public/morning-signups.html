@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Club Morning Sign-In 🌿</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e0f7ec;
+      text-align: center;
+      padding: 2rem;
+      color: #2e7d32;
+    }
+
+    .window-frame {
+      background: #fff;
+      border: 2px solid #81c784;
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    input, button {
+      padding: 0.6rem;
+      margin: 0.5rem;
+      border: 2px solid #a5d6a7;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #81c784;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #66bb6a;
+    }
+
+    .grove {
+      margin-top: 2rem;
+    }
+
+    .leaf {
+      background: #c8e6c9;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      margin: 0.4rem;
+      display: inline-block;
+      font-style: italic;
+      box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #81c784;
+      padding: 0.5rem 1.5rem;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="window-frame">
+    <h1>🌿 Key Club Morning Sign-In</h1>
+    <p>Key in your name to start the day!</p>
+    <form id="signInForm">
+      <input type="text" id="nameInput" placeholder="Enter your name" required />
+      <button type="submit">Key In</button>
+    </form>
+
+    <div class="grove" id="grove">
+      <h3>Today's Key Cabinet:</h3>
+      <div id="leaves"></div>
+    </div>
+  </div>
+
+  <a href="index.html" class="back-button">← Back to Home</a>
+
+  <script src="signups.js"></script>
+</body>
+</html>
