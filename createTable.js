@@ -1,17 +1,8 @@
-const path = require('path');
-require('dotenv').config({ path: path.resolve(__dirname, '.env') });
-
-console.log("🔍 DATABASE_URL:", process.env.DATABASE_URL);
-
-
 const { Pool } = require('pg');
-require('dotenv').config();
 
-console.log("🔍 DATABASE_URL:", process.env.DATABASE_URL);
-
-
+// Direct connection string to Render DB with SSL
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: 'postgresql://keyclub_database_user:c2LmQmambJcB6kKFHUrwpaK5RbdjhJVF@dpg-d1hddpvgi27c739lipb0-a.render.com/keyclub_database?ssl=true',
   ssl: { rejectUnauthorized: false }
 });
 
