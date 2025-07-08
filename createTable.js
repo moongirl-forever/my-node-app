@@ -1,8 +1,8 @@
+
 const { Pool } = require('pg');
 
-// Direct connection string to Render DB with SSL
 const pool = new Pool({
-  connectionString: 'postgresql://keyclub_database_user:c2LmQmambJcB6kKFHUrwpaK5RbdjhJVF@dpg-d1hddpvgi27c739lipb0-a.render.com/keyclub_database?ssl=true',
+  connectionString: 'postgresql://keyclub_database_user:c2LmQmambJcB6kKFHUrwpaK5RbdjhJVF@dpg-d1hddpvgi27c739lipb0-a.oregon-postgres.render.com/keyclub_database?ssl=true',
   ssl: { rejectUnauthorized: false }
 });
 
