@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
+const { Pool } = require('pg');
 const app = express();
+require('dotenv').config();
 
 // ✅ Use Render’s provided port or default to 3000 locally
 const PORT = process.env.PORT || 3000;
@@ -11,7 +13,13 @@ app.use(express.json());
 
 let signIns = [];
 
-//  API route: handle name submissions
+// ✅ PostgreSQL connection (Render-hosted)
+const pool = new Pool({
+  connectionString: 'postgresql://keyclub_database_user:c2LmQmambJcB6kKFHUrwpaK5RbdjhJVF@dpg-d1hddpvgi27c739lipb0-a.oregon-postgres.render.com/keyclub_database?ssl=true',
+  ssl: { rejectUnauthorized: false }
+});
+
+// ✅ API route: handle name submissions
 app.post('/signin', (req, res) => {
   const name = req.body.name;
   if (name) {
@@ -22,17 +30,33 @@ app.post('/signin', (req, res) => {
   }
 });
 
-//  API route: show all sign-ins
+// ✅ API route: show all sign-ins
 app.get('/signin', (req, res) => {
   res.json(signIns);
 });
 
-//  Serve the custom sign-in page
+// ✅ API route: add a new announcement
+app.post('/announcements', async (req, res) => {
+  const { message, image_url } = req.body;
+
+  try {
+    const result = await pool.query(
+      'INSERT INTO announcements (message, image_url) VALUES ($1, $2) RETURNING *',
+      [message, image_url]
+    );
+    res.status(201).json({ success: true, announcement: result.rows[0] });
+  } catch (err) {
+    console.error('❌ Error inserting announcement:', err);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  }
+});
+
+// ✅ Serve the custom sign-in page
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'signin.html'));
 });
 
-//  Start server
+// ✅ Start server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
