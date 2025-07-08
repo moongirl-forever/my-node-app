@@ -4,6 +4,7 @@ const clickCounter = document.getElementById('click-counter');
 
 const newGifUrl = "happy plant.gif";
 const newGifUrl1 = "proud flower (1).gif";
+const newGifUrl2 = "buff tree.gif";
 
 // Check for stored timestamp
 let storedTime = localStorage.getItem('clickTimestamp');
@@ -59,6 +60,9 @@ navButtons.forEach(button => {
     }
     if (clickCount === 20) {
       gifImage.src = newGifUrl1;
+    }
+    if (clickCount === 50) {
+      gifImage.src = newGifUrl2;
     }
   });
 });
