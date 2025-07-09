@@ -72,3 +72,13 @@ app.delete('/announcements/:id', async (req, res) => {
     res.status(500).json({ success: false, error: 'Internal server error' });
   }
 });
+
+app.get('/announcements', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM announcements ORDER BY timestamp DESC');
+    res.json({ success: true, announcements: result.rows });
+  } catch (err) {
+    console.error('❌ Error fetching announcements:', err);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  }
+});

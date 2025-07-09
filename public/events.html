@@ -198,6 +198,19 @@
   list.prepend(div);
 }
 
+// Load announcements when the page loads
+window.addEventListener('DOMContentLoaded', async () => {
+  const res = await fetch('/announcements');
+  const data = await res.json();
+
+  if (data.success) {
+    data.announcements.forEach(addAnnouncementToPage);
+  } else {
+    console.error('Failed to load announcements');
+  }
+});
+
+
   </script>
 </body>
 </html>
