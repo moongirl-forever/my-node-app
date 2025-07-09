@@ -5,19 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>🌿 Announcements</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #f0f8f4;
       color: #2e4d3d;
-      padding: 2rem;
+      padding: 1rem;
+      margin: 0;
+    }
+
+    .container {
       max-width: 700px;
       margin: auto;
+      padding: 1rem;
     }
 
     h1 {
       text-align: center;
       color: #3b6b50;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      background-color: #a3d9a5;
+      color: #2e4d3d;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.2s ease;
+    }
+
+    .back-button:hover {
+      background-color: #8ccf94;
     }
 
     form {
@@ -42,6 +67,7 @@
       border: 1px solid #cce3d3;
       border-radius: 4px;
       background-color: #f9fdfb;
+      font-size: 1rem;
     }
 
     button {
@@ -53,6 +79,7 @@
       border-radius: 4px;
       cursor: pointer;
       font-weight: bold;
+      font-size: 1rem;
     }
 
     button:hover {
@@ -73,22 +100,51 @@
       margin-top: 0.5rem;
       border-radius: 4px;
     }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 0.5rem;
+      }
+
+      .container {
+        padding: 0.5rem;
+      }
+    }
+
+    .delete-button {
+  background-color: #e57373;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.delete-button:hover {
+  background-color: #d9534f;
+}
+
   </style>
 </head>
 <body>
-  <h1>🌿 Club Announcements</h1>
+  <div class="container">
+    <a href="index.html" class="back-button">← Back</a>
+    <h1>🌿 Club Announcements</h1>
 
-  <form id="announcementForm">
-    <label for="message">Message:</label>
-    <textarea id="message" required></textarea>
+    <form id="announcementForm">
+      <label for="message">Message:</label>
+      <textarea id="message" required></textarea>
 
-    <label for="image_url">Image URL (optional):</label>
-    <input type="url" id="image_url" />
+      <label for="image_url">Image URL (optional):</label>
+      <input type="url" id="image_url" />
 
-    <button type="submit">Post Announcement</button>
-  </form>
+      <button type="submit">Post Announcement</button>
+    </form>
 
-  <div id="announcementsList"></div>
+    <div id="announcementsList"></div>
+  </div>
 
   <script>
     const form = document.getElementById('announcementForm');
@@ -115,14 +171,33 @@
     });
 
     function addAnnouncementToPage(announcement) {
-      const div = document.createElement('div');
-      div.className = 'announcement';
-      div.innerHTML = `
-        <p>${announcement.message}</p>
-        ${announcement.image_url ? `<img src="${announcement.image_url}" alt="Announcement Image" />` : ''}
-      `;
-      list.prepend(div);
+  const div = document.createElement('div');
+  div.className = 'announcement';
+  div.setAttribute('data-id', announcement.id);
+
+  div.innerHTML = `
+    <p>${announcement.message}</p>
+    ${announcement.image_url ? `<img src="${announcement.image_url}" alt="Announcement Image" />` : ''}
+    <button class="delete-button">Delete</button>
+  `;
+
+  const deleteBtn = div.querySelector('.delete-button');
+  deleteBtn.addEventListener('click', async () => {
+    const res = await fetch(`/announcements/${announcement.id}`, {
+      method: 'DELETE'
+    });
+
+    const data = await res.json();
+    if (data.success) {
+      div.remove();
+    } else {
+      alert('Failed to delete announcement.');
     }
+  });
+
+  list.prepend(div);
+}
+
   </script>
 </body>
 </html>
