@@ -60,3 +60,15 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+app.delete('/announcements/:id', async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    await pool.query('DELETE FROM announcements WHERE id = $1', [id]);
+    res.json({ success: true });
+  } catch (err) {
+    console.error('❌ Error deleting announcement:', err);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  }
+});
