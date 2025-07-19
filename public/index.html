@@ -12,6 +12,9 @@
     <h2>Welcome to Key Club!</h2>
     <a href="https://www.keyclub.org/">Official Key Club Website</a> <!--This is a comment. Replace this with key club official website-->      
 </header>
+<div class="login-container">
+  <a href="/auth/google" class="login-btn">Sign in with Google</a>
+</div>
 </body>
 
 <!DOCTYPE html>
@@ -39,6 +42,28 @@
       text-align: center;
       border-bottom: 5px dotted #91c98c;
     }
+    .login-container {
+  text-align: right;
+  padding: 10px 20px;
+}
+
+.login-btn {
+  background-color: #7bbf8e;
+  color: white;
+  font-weight: bold;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #5fae76;
+}
+
 
     </style>
 </head>
