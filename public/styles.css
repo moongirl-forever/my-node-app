@@ -1,14 +1,14 @@
 body {
     font-family: 'Verdana', sans-serif;
-    background-color: #e6f5e6; /* very light green */
-    color: #2d4f2f; /* deep forest green for text */
+    background-color: #e6f5e6; 
+    color: #083B73; 
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
 h1 {
-    color: #1e5631; /* rich green tone */
+    color: #083B73;
     margin-top: 50px;
     font-size: 2.5em;
 }
@@ -19,18 +19,18 @@ h1 {
 
 img {
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 100, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(4, 1, 48, 0.3);
     width: 400px;
 }
 
 a {
-    color: #3b7a57;
+    color: #38618F;
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
-    color: #1c4e3f;
+    color: #182a3f;
 }
 
 .window-frame {
@@ -51,7 +51,7 @@ a:hover {
     padding: 6px 10px;
     font-family: 'Courier New', monospace;
     font-size: 14px;
-    color: #2d4f2f;
+    color: #083B73;
     border-bottom: 1px solid #aaa;
 }
 
@@ -85,7 +85,7 @@ a:hover {
 }
 
 .nav-btn {
-    background-color: #3b7a57;
+    background-color: #38618F;
     color: white;
     padding: 12px 18px;
     border: none;
@@ -96,13 +96,13 @@ a:hover {
 }
 
 .nav-btn:hover {
-    background-color: #2e5c44;
+    background-color: #083B73;
 }
 
 #click-counter {
     margin-top: 20px;
     font-size: 18px;
-    color: #2d4f2f;
+    color: #083B73;
     font-weight: bold;
 }
 
@@ -111,7 +111,7 @@ a:hover {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #81c784;
+  background-color: #083B73;
   color: white;
   padding: 12px 24px;
   border-radius: 8px;
@@ -131,7 +131,7 @@ a:hover {
 }
 
 .back-button {
-  background-color: #81c784;
+  background-color: #38618F;
   color: white;
   padding: 0.4rem 1.2rem;
   border: none;
@@ -144,7 +144,7 @@ a:hover {
 }
 
 .back-button:hover {
-  background-color: #66bb6a;
+  background-color: #2f5179;
 }
 
 .button-container {
@@ -153,7 +153,7 @@ a:hover {
 
 .window-frame {
   background-color: #fff;
-  border: 2px solid #81c784;
+  border: 2px solid #38618F;
   border-radius: 10px;
   max-width: 800px;
   margin: 2rem auto;
@@ -165,14 +165,14 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #a5d6a7;
+  background-color: #CCC1B0;
   padding: 0.5rem 1rem;
   font-weight: bold;
-  border-bottom: 2px solid #81c784;
+  border-bottom: 2px solid #38618F;
 }
 
 .title-bar .title {
-  color: #2e7d32;
+  color: #083B73;
 }
 
 .buttons .btn {
@@ -184,19 +184,7 @@ a:hover {
   background-color: #c8e6c9;
 }
 
-.buttons .close { background-color: #e57373; }
-.buttons .minimize { background-color: #fff176; }
-.buttons .maximize { background-color: #81c784; }
+.buttons .close { background-color: #003876; }
+.buttons .minimize { background-color: #1e436d; }
+.buttons .maximize { background-color: #5b7794; }
 
-.delete-btn {
-  background: transparent;
-  border: none;
-  color: #d32f2f;
-  font-size: 1rem;
-  margin-left: 10px;
-  cursor: pointer;
-}
-
-.delete-btn:hover {
-  color: #b71c1c;
-}
