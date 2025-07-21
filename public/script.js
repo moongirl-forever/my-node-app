@@ -1,5 +1,5 @@
 const navButtons = document.querySelectorAll('.nav-btn');
-const gifImage = document.querySelector('img');
+const gifImage = document.getElementById('gif-image');
 const clickCounter = document.getElementById('click-counter');
 
 const newGifUrl = "happy plant.gif";

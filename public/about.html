@@ -9,7 +9,7 @@
       display: inline-block;
       margin: 2rem auto;
       padding: 0.5rem 1.5rem;
-      background-color: #81c784;
+      background-color: #6792c2;
       color: white;
       text-decoration: none;
       border-radius: 8px;
@@ -18,7 +18,7 @@
     }
 
     .back-button:hover {
-      background-color: #66bb6a;
+      background-color: #4f7096;
     }
 
     .button-container {
@@ -27,23 +27,25 @@
     body {
       font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
       background: #fefcf6;
-      color: #3e4e3e;
+      color: #000000;
       margin: 0;
       padding: 0;
     }
 
     header {
-      background: linear-gradient(to right, #b3e5b0, #d4edda);
-      color: #2d4f2f;
+      background: linear-gradient(to right, #6f99c9, #a0bad8);
+      color: #ccc1b0;
       padding: 40px 20px;
       text-align: center;
-      border-bottom: 5px dotted #91c98c;
+      border-bottom: 5px dotted #38618f;
     }
 
     h1 {
       font-size: 2.8em;
       margin: 0;
     }
+
+    
 
     .content {
       max-width: 850px;
@@ -55,9 +57,9 @@
     }
 
     h2 {
-      color: #437d4c;
+      color: #083b73;
       margin-top: 30px;
-      border-left: 5px solid #b7dfb2;
+      border-left: 5px solid #ccc1b0;
       padding-left: 10px;
     }
 
@@ -95,21 +97,27 @@
     }
 
     .footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #789f7c;
-      background-color: #f0f9f1;
-      border-top: 3px dashed #c3e6cb;
-      margin-top: 40px;
-    }
+  background-color: #083B73;
+  color: #ffffff;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 50px;
+  border-top: 4px dashed #ffffff;
+}
+
+.footer-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
     .about-img {
   width: 100%;
   max-width: 500px;
   border-radius: 12px;
   margin: 20px auto;
   display: block;
-  box-shadow: 0 4px 12px rgba(0, 100, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(35, 77, 139, 0.15);
   transition: transform 0.3s ease;
 }
 
@@ -124,6 +132,11 @@
     <h1>🌼 About Us</h1>
     <p>Welcome to the Kiwanis Key Club at Atholton High School!</p>
   </header>
+
+  <div class="button-container">
+    <a href="index.html" class="back-button">← Back to Home</a>
+  </div>
+
 
   <div class="content">
     <p><strong>Hey there, future leaders and changemakers!</strong> If you're all about making a positive impact while having a blast, you've come to the right place. Kiwanis Key Club isn't just any club—it's the heartbeat of community service and leadership at Atholton High.</p>
@@ -155,17 +168,19 @@
       <h2>📸 Our Club in Action</h2>
       <div class="photo-row">
         <!-- Replace the URLs with your own images -->
-        <img src="keyclublogo.jfif" alt="Service project 1">
-        <img src="keyclublogo.jfif" alt="Volunteers at work">
-        <img src="keyclublogo.jfif" alt="Fun club event">
-        <img src="keyclublogo.jfif" alt="Leadership meeting">
+        <img src="Key club logo (background).jpg" alt="Service project 1">
+        <img src="Key club logo (background).jpg" alt="Volunteers at work">
+        <img src="Key club logo (background).jpg" alt="Fun club event">
+        <img src="Key club logo (background).jpg" alt="Leadership meeting">
       </div>
     </div>
   </div>
 
   <div class="footer">
-    <p>🌿 © 2025 Key Club at Atholton High School. Powered by heart & service.</p>
-  </div>
+  <img src="Key club logo (background).jpg" alt="Key Club Logo" class="footer-logo" />
+  <p>© 2025 Key Club at Atholton High School. Powered by heart &amp; service.</p>
+</div>
+
 
 </body>
 </html>

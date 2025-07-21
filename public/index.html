@@ -1,97 +1,129 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Key Club Website</title>
-    <link rel="stylesheet" type="text/css" href="styles.css"/>
-  
-
-</head>
-<body>
-    <header>
-    <h1>Key Club Home</h1>
-    <h2>Welcome to Key Club!</h2>
-    <a href="https://www.keyclub.org/">Official Key Club Website</a> <!--This is a comment. Replace this with key club official website-->      
-</header>
-<div class="login-container">
-  <a href="/auth/google" class="login-btn">Sign in with Google</a>
-</div>
-</body>
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Key Club At Altholton</title>
-    <style>
-         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-            background-color: #D5E0EC;
-        }
-        h1 {
-            color: #083B73;
-        }
-        .gif-container {
-            margin-top: 30px;
-        }
-        header {
-      background: linear-gradient(to right, #b3e5b0, #d4edda);
-      color: #2d4f2f;
-      padding: 40px 20px;
+  <meta charset="UTF-8" />
+  <title>Key Club at Atholton</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #D5E0EC;
       text-align: center;
-      border-bottom: 5px dotted #91c98c;
+      margin: 0;
+      padding: 0;
     }
-    .login-container {
-  text-align: right;
-  padding: 10px 20px;
+
+    .banner {
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      color: #083B73;
+      margin-top: 30px;
+    }
+
+    .nav-buttons {
+      margin: 20px 0;
+    }
+
+    .nav-btn {
+      margin: 0 10px;
+      padding: 10px 20px;
+      background-color: #083B73;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      background-color: #0c4f9c;
+    }
+
+    .gif-container {
+      margin-top: 30px;
+    }
+
+    .window-frame {
+      margin-top: 20px;
+    }
+
+    #click-counter {
+      margin-top: 20px;
+      color: #333;
+    }
+
+    .header-highlight {
+  background: linear-gradient(to right, #ffffff, #9eb5f7);
+  color: #083B73;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.footer {
+  background-color: #083B73;
+  color: #ffffff;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 50px;
+  border-top: 4px dashed #ffffff;
 }
 
-.login-btn {
-  background-color: #7bbf8e;
-  color: white;
-  font-weight: bold;
-  padding: 10px 18px;
-  border: none;
-  border-radius: 4px;
-  text-decoration: none;
-  font-family: Arial, sans-serif;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
-}
-
-.login-btn:hover {
-  background-color: #5fae76;
+.footer-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 10px;
 }
 
 
-    </style>
+   </style>
 </head>
 <body>
-    <div id="toast" class="hidden">Click count reset for a fresh new day! 🌞</div>
-    <h1>Welcome to Key Club at Altholton!</h1>
-    <div class="window-frame">
-        <div class="nav-buttons">
+
+  <!-- 🌟 Main Banner Image -->
+  <img src="KEY CLUB at Atholthon.jpg" alt="Key Club Banner" class="banner" />
+
+  <h1 class="header-highlight">Welcome to Key Club at Atholton!</h1>
+
+  <div class="nav-buttons">
     <a href="about.html" class="nav-btn">About Us</a>
     <a href="calendar.html" class="nav-btn">Calendar</a>
     <a href="morning-signups.html" class="nav-btn">Morning Sign Ups</a>
     <a href="leaders.html" class="nav-btn">Leaders</a>
     <a href="events.html" class="nav-btn">Events</a>
-</div>
+  </div>
 
-    <div class="title-bar">
-        <span class="title">Key Plant</span>
-        <div class="buttons">
-            <span class="btn close"></span>
-            <span class="btn minimize"></span>
-            <span class="btn maximize"></span>
-        </div>
+  <!-- 🪴 Optional GIF Section (placed lower) -->
+  <div class="window-frame">
+  <div class="title-bar">
+    <span class="title">Key Club Plant</span>
+    <div class="window-buttons">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-    <img src="crying plant.gif" alt="Key Club Fun">
+  </div>
+  <div class="gif-container">
+    <img src="crying plant.gif" alt="Key Club Fun" id="gif-image" />
+  </div>
 </div>
-<p id="click-counter">Button clicks: 0</p>
-<script src="script.js"></script>
+
+  <p id="click-counter">Button clicks: 0</p>
+
+  <div class="footer">
+  <img src="Key club logo (background).jpg" alt="Key Club Logo" class="footer-logo" />
+  <p>© 2025 Key Club at Atholton High School. Powered by heart &amp; service.</p>
+</div>
+
+
+  <script src="script.js"></script> 
 </body>
+
 </html>
-
-
